@@ -14,7 +14,7 @@ run.addEventListener("click", async () => {
   
 function displayResults() {
     let htmlBody = `${document.body.innerHTML}`;
-    let contentRegex = /(?=Nahl.sit chybu\/n.zkou kvalitu<\/strong><\/a>[\r\n \t]*<\/th>[\r\n \t]*<\/tr>[\r\n \t]*<\/thead>[\r\n \t]*<\/table>[\r\n \t]*<\/div>[\r\n \t]*([\s\S]*))/gm;
+    let contentRegex =/<strong>Nahl[\S]sit chybu<\/strong>((?:.|\n)*)<!-- AI CONTENT END 1 -->/gm;
     let content = contentRegex.exec(htmlBody)[1];
     content = content.replace(/<!-- AI CONTENT END 1 -->[\s\S]*/gm, ''); 
 	content = content.replace(/<ins[^>]+?>/gm, '');
