@@ -1,6 +1,6 @@
 
 function formatContent(htmlBody) {
-	let contentRegex =/alt="rozbor-d[\S]la"><\/p>((?:.|\n)*)<!-- AI CONTENT END 1 -->/gm
+        let contentRegex =/<strong>Nahl[\S]sit chybu<\/strong>((?:.|\n)*)<!-- AI CONTENT END 1 -->/gm;
 	let content = contentRegex.exec(htmlBody)[1];
 	content = content.replace(/<!-- AI CONTENT END 1 -->[\s\S]*/gm, ''); 
 	content = content.replace(/<ins[^>]+?>/gm, '');
